@@ -21,6 +21,21 @@ def permutations(route, ports):
 # This will start the recursion with 0 ("PAN") as the first stop
 permutations([0], list(range(1, len(portnames))))
 
+# The loop will be
+# 01 234
+#       012 34
+#               0123 4
+#                       01234
+#                               print
+#               0124 3
+#                       01243
+#                               print
+#       013 24
+#               0132 4
+#                       01324
+#                               print
+# etc
+
 # Facit
 # def permutations(route, ports):
 #     if len(ports) < 1:
