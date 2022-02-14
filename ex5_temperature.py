@@ -1,3 +1,8 @@
+"""Modify the accept_prob function so that it returns the probability of 
+accepting the new state using simulated annealing. The program should take 
+the two score values (the current and the new) and the temperature value as 
+arguments."""
+
 import random
 import numpy as np
 

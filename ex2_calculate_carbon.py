@@ -1,3 +1,6 @@
+"""Building on the previous solution, modify the code so that it finds the route with minimum carbon emissions and prints it out. Again, the program should work for any number of ports. You can assume that the distances between the ports are given in an array of the appropriate size so that the distance between ports i and j is found in D[i][j]."""
+
+
 portnames = ["PAN", "AMS", "CAS", "NYC", "HEL"]
 
 # https://sea-distances.org/
