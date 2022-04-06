@@ -62,7 +62,7 @@ def main(text):
         tfidf = []
         for word in vocabulary:
             if word in doc:
-                test = _get_tf_idf_for_word(doc, tf[word][doc_index], df[word])
+                test = _get_tf_idf_for_word(tf[word][doc_index], df[word])
             else:
                 test = 0
             tfidf.append(test)
@@ -77,16 +77,11 @@ def find_nearest_pair(data):
     dist = np.empty((N, N), dtype=np.float)
     for i in range(N):
         for j in range(N):
-            # dist[i, j] = _get_distance_between_values(data[i], data[j])
             dist[i, j] = _get_distance_between_rows(data[i], data[j])
 
     # To prevent diagonal lines in data set (which is 0 and lowest)
     np.fill_diagonal(dist, np.inf)
     print(np.unravel_index(np.argmin(dist), dist.shape))
-
-
-def _get_distance_between_values(value1, value2):
-    return abs(value1 - value2)
 
 
 def _get_distance_between_rows(row1, row2):
@@ -99,27 +94,7 @@ def _get_distance_between_rows(row1, row2):
     return dist
 
 
-# def _get_tf_for_word(doc: List[str]):
-#     tf = {}
-#     for word in set(doc):
-#         tf[word] = doc.count(word) / len(doc)
-#     return tf
-
-
-# def _get_df_for_word(word: str, docs: List[str]):
-#     doc_count = 0
-#     for doc in docs:
-#         if word in doc:
-#             doc_count += 1
-#     return 1 / (doc_count / len(docs)) if doc_count else 0
-
-
-def _get_tf_idf_for_word(doc: List[str], tf: float, df: float) -> float:
-    # tf-idf = tf x log(1/df)
-    # math.log(x, 10)
-    # tf_idf_array = []
-    # for word in set(doc):
-    #     tf_idf_array.append(tf[word] * math.log(df[word], 10))
+def _get_tf_idf_for_word(tf: float, df: float) -> float:
     return tf * math.log(df, 10)
 
 
