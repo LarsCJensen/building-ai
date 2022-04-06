@@ -38,6 +38,7 @@ def find_nearest_pair(data):
             # Add values to the dist array 0,0 is the distance between 0,0
             dist[i, j] = _get_distance_between_rows(data[i], data[j])
 
+    # To prevent diagonal lines in data set (which is 0 and lowest)
     np.fill_diagonal(dist, np.inf)
     print(np.unravel_index(np.argmin(dist), dist.shape))
 
