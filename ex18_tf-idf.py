@@ -56,7 +56,8 @@ def main(text):
         df[word] = sum([word in doc for doc in docs]) / N
 
     # loop through documents to calculate the tf-idf values¨
-    # Create a vector for each document where all words in vocabulary is present (0 if word doesnt exist)
+    # Create a vector for each document where all words in vocabulary is
+    # present (0 if word doesnt exist) so the documents can be compared correctly
     tf_idf_list = []
     for doc_index, doc in enumerate(docs):
         tfidf = []
