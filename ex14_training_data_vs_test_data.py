@@ -1,5 +1,9 @@
 """
-Write a program that reads data about one set of cabins (training data), estimates linear regression coefficients based on it, then reads data about another set of cabins (test data), and predicts the prices in it. Note that both data sets contain the actual prices, but the program should ignore the prices in the second set. They are given only for comparison.
+Write a program that reads data about one set of cabins (training data), estimates 
+linear regression coefficients based on it, then reads data about another set of cabins 
+(test data), and predicts the prices in it. Note that both data sets contain the actual 
+prices, but the program should ignore the prices in the second set. They are given only 
+for comparison.
 """
 
 import numpy as np
